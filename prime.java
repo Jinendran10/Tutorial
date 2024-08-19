@@ -4,29 +4,30 @@ class prime
 	public static void main(String args[])
 	{
 		Scanner s1=new Scanner(System.in);
-		int n,i,j,s=0;
+		int n,i,j;
 		int p[]=new int[50];
 		System.out.println("Enter the limit:");
 		n=s1.nextInt();
 		System.out.println("The prime numbers upto "+n+"are:");
-		for(i=1;i<n;i++)
+		for(i=2;i<n;i++)
 		{
-			for(j=1;j<=i/2;j++)
+			int s=0;
+			for(j=2;j<=i/2;j++)
 			{
 				if(i%j==0)
 				{
 					s=1;
 					break;
 				}
-				if(s==0)
-				{
-					p[i]=i;
-				}
+			}
+			if(s==0)
+			{
+				p[i]=i;
 			}
 		}
 		for(i=1;i<n;i++)
 		{
-			if(p[i]!=0)				
+			if(p[i]!=0)
 			{
 				System.out.print(p[i]+"\t");
 			}
